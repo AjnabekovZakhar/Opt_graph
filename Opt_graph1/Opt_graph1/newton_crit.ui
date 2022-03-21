@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Newton_crit</class>
+ <widget class="QDialog" name="Newton_crit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Newton method</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>202</width>
+     <height>108</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Stop criterion</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QRadioButton" name="inc_rb">
+      <property name="text">
+       <string>||x_n-x_{n-1}||&lt;eps</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="grad_rb">
+      <property name="text">
+       <string>|grad(f(x_n))|&lt;eps</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="f_rb">
+      <property name="text">
+       <string>|(f(x_n)-f(x_{n-1}))/f(x_n)|&lt;eps</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="plot_button">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>250</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>plot</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

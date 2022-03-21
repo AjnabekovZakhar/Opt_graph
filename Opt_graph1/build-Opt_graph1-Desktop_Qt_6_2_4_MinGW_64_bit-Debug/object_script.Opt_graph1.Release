@@ -1,0 +1,17 @@
+release/Expr.o
+release/Heatmap.o
+release/Something.o
+release/Stop_crit.o
+release/dom.o
+release/main.o
+release/mainwidget.o
+release/newton_crit.o
+release/opt_fun.o
+release/opt_fun1_expr.o
+release/opt_fun2_expr.o
+release/opt_method.o
+release/random_crit.o
+release/sup_stop.o
+release/moc_mainwidget.o
+release/moc_newton_crit.o
+release/moc_random_crit.o

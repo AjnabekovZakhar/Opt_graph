@@ -1,0 +1,17 @@
+debug/Expr.o
+debug/Heatmap.o
+debug/Something.o
+debug/Stop_crit.o
+debug/dom.o
+debug/main.o
+debug/mainwidget.o
+debug/newton_crit.o
+debug/opt_fun.o
+debug/opt_fun1_expr.o
+debug/opt_fun2_expr.o
+debug/opt_method.o
+debug/random_crit.o
+debug/sup_stop.o
+debug/moc_mainwidget.o
+debug/moc_newton_crit.o
+debug/moc_random_crit.o
