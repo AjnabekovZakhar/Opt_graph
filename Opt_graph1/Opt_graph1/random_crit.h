@@ -27,6 +27,9 @@ private:
 
     Stop_crit *stop_crit;
 
+    double delta=1;
+    double p=0.5;
+
     int n = 1000;
     double eps =0.0000001;
     int m = 50;

@@ -6,6 +6,13 @@ Newton_crit::Newton_crit(QWidget *parent) :
     ui(new Ui::Newton_crit)
 {
     ui->setupUi(this);
+
+    ui->n->setMinimum(1);
+    ui->eps->setMinimum( numeric_limits<double>::epsilon());
+    ui->n->setMaximum(INFINITY);
+    ui->n->setValue(n);
+    ui->eps->setValue(eps);
+
 }
 
 Newton_crit::~Newton_crit()
@@ -22,6 +29,9 @@ void Newton_crit::slot(Opt_fun *opt_fun_, Dom *dom_, vector<double>x_0_)
 
 void Newton_crit::on_plot_button_clicked()
 {
+    n=ui->n->value();
+    eps=ui->eps->value();
+
     if(ui->inc_rb->isChecked())
         stop_crit = new Stop_crit_Newton_dif(n, eps); else if(ui->grad_rb->isChecked())
         stop_crit = new Stop_crit_Newton_grad(n, eps); else

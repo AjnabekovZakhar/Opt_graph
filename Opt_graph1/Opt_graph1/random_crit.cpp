@@ -6,6 +6,21 @@ Random_crit::Random_crit(QWidget *parent) :
     ui(new Ui::Random_crit)
 {
     ui->setupUi(this);
+
+    ui->n->setMinimum(1);
+    ui->m->setMinimum(1);
+    ui->eps->setMinimum( numeric_limits<double>::epsilon());
+    ui->delta->setMinimum( numeric_limits<double>::epsilon());
+    ui->p->setMinimum( numeric_limits<double>::epsilon());
+
+    ui->n->setMaximum(INFINITY);
+    ui->m->setMaximum(INFINITY);
+
+    ui->n->setValue(n);
+    ui->m->setValue(m);
+    ui->eps->setValue(eps);
+    ui->delta->setValue(delta);
+    ui->p->setValue(p);
 }
 
 Random_crit::~Random_crit()
@@ -22,11 +37,17 @@ void Random_crit::slot(Opt_fun *opt_fun_, Dom *dom_, vector<double>x_0_)
 
 void Random_crit::on_plot_button_clicked()
 {
+    n=ui->n->value();
+    eps=ui->eps->value();
+    delta=ui->delta->value();
+    p=ui->p->value();
+    m=ui->m->value();
+
     if(ui->inc_rb->isChecked())
         stop_crit = new Stop_crit_random_search_dif(n, eps); else
         stop_crit = new Stop_crit_random_search_last_change(n,m);
 
-    rs = new Random_search(dom, opt_fun, stop_crit,1,0.5);
+    rs = new Random_search(dom, opt_fun, stop_crit,delta,p);
     vector<vector<double>> X_n = rs->optim(x_0);
 
 

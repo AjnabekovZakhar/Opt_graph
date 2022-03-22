@@ -121,7 +121,7 @@ vector<vector<double>> Random_search::optim(vector<double> v)
 
 		if (opt_fun->calc(y_n) < opt_fun->calc(x_n.back())) {
             if (local_opt){
-                if(delta_multiplier * delta > std::numeric_limits<double>::epsilon())
+                if(delta_multiplier * delta > numeric_limits<double>::epsilon())
                 delta_multiplier /= 2;}
 			x_n.push_back(y_n);
 			sup->set_x_n(x_n.back());
