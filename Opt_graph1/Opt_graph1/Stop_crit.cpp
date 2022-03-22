@@ -173,6 +173,8 @@ bool Stop_crit_random_search_last_change::check(sup_stop* sup)
 
 Stop_crit_random_search_last_change::Stop_crit_random_search_last_change(int max_, int max_lc_) :Stop_crit_count(max_),max_lc(max_lc_)
 {
+    if (max_ < max_lc_)
+        throw invalid_argument("max < max since last change");
 }
 
 string Stop_crit_random_search_last_change::info()

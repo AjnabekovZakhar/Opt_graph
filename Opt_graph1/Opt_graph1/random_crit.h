@@ -2,6 +2,7 @@
 #define RANDOM_CRIT_H
 
 #include <QWidget>
+#include <QMessageBox>
 
 #include"opt_method.h"
 
@@ -44,6 +45,8 @@ public slots:
     void slot(Opt_fun*, Dom*, vector<double>);
 private slots:
     void on_plot_button_clicked();
+    void on_n_valueChanged(int arg1);
+    void on_m_valueChanged(int arg1);
 };
 
 #endif // RANDOM_CRIT_H

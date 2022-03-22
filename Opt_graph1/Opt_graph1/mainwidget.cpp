@@ -43,6 +43,7 @@ MainWidget::~MainWidget()
 
 void MainWidget::on_crit_button_clicked()
 {
+    try{
     left_1= ui->left_1->value();
     left_2= ui->left_2->value();
 
@@ -72,6 +73,10 @@ void MainWidget::on_crit_button_clicked()
         opt_fun = new Opt_fun1();
 
     emit signal(opt_fun,dom,{x_01,x_02});
+
+    }catch (const std::exception& e) {
+               QMessageBox::warning(this, "Exception", e.what());
+           }
 }
 
 

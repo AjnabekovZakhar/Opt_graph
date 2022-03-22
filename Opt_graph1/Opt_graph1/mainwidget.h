@@ -2,6 +2,8 @@
 #define MAINWIDGET_H
 
 #include <QWidget>
+#include <QMessageBox>
+
 #include"newton_crit.h"
 #include"random_crit.h"
 

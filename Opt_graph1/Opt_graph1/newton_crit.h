@@ -2,6 +2,7 @@
 #define NEWTON_CRIT_H
 
 #include <QDialog>
+#include <QMessageBox>
 
 #include "Heatmap.h"
 

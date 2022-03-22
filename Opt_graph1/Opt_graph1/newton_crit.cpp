@@ -10,6 +10,7 @@ Newton_crit::Newton_crit(QWidget *parent) :
     ui->n->setMinimum(1);
     ui->eps->setMinimum( numeric_limits<double>::epsilon());
     ui->n->setMaximum(INFINITY);
+
     ui->n->setValue(n);
     ui->eps->setValue(eps);
 
@@ -29,6 +30,7 @@ void Newton_crit::slot(Opt_fun *opt_fun_, Dom *dom_, vector<double>x_0_)
 
 void Newton_crit::on_plot_button_clicked()
 {
+    try{
     n=ui->n->value();
     eps=ui->eps->value();
 
@@ -46,7 +48,9 @@ void Newton_crit::on_plot_button_clicked()
 
 
     hm.set(dom,opt_fun,X_n);
-
+}catch (const std::exception& e) {
+           QMessageBox::warning(this, "Exception", e.what());
+       }
 
 
 }
