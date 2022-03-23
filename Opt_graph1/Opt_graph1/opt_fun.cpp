@@ -63,3 +63,39 @@ string Opt_fun2::info()
 {
     return "f(x,y)=(1-x)^2+100(y-x^2)^2";
 }
+
+double Opt_fun3::calc(const vector<double> &v)
+{
+    return log((v[0]*v[0])+(v[1]*v[1]*v[1]*v[1])+1);
+}
+
+Opt_fun3::Opt_fun3()
+{
+    dim=2;
+    grad = { new Opt_fun3_grad1,new Opt_fun3_grad2 };
+    Hess = { {new Opt_fun3_Hess11,new Opt_fun3_Hess12},
+        {new Opt_fun3_Hess12,new Opt_fun3_Hess22} };
+}
+
+string Opt_fun3::info()
+{
+    return "f(x,y)=ln(x^2+y^4+1)";
+}
+
+double Opt_fun4::calc(const vector<double> &v)
+{
+    return ((v[0]*v[0])*(7-3*sin(v[0])))+((v[1]*v[1])*(4-cos(v[1])));
+}
+
+Opt_fun4::Opt_fun4()
+{
+    dim=2;
+    grad = { new Opt_fun4_grad1,new Opt_fun4_grad2 };
+    Hess = { {new Opt_fun4_Hess11,new Opt_fun4_Hess12},
+        {new Opt_fun4_Hess12,new Opt_fun4_Hess22} };
+}
+
+string Opt_fun4::info()
+{
+    return "f(x,y)=x^2(7-3*sin(x))+(4-cos(y))*y^2";
+}

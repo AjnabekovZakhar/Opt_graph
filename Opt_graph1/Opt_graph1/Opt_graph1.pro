@@ -20,6 +20,8 @@ SOURCES += \
     opt_fun.cpp \
     opt_fun1_expr.cpp \
     opt_fun2_expr.cpp \
+    opt_fun3_expr.cpp \
+    opt_fun4_expr.cpp \
     opt_method.cpp \
     random_crit.cpp \
     sup_stop.cpp
@@ -35,6 +37,8 @@ HEADERS += \
     opt_fun.h \
     opt_fun1_expr.h \
     opt_fun2_expr.h \
+    opt_fun3_expr.h \
+    opt_fun4_expr.h \
     opt_method.h \
     random_crit.h \
     sup_stop.h

@@ -59,8 +59,9 @@ void MainWidget::on_crit_button_clicked()
     dom = new Dom(2,{left_1,left_2},{right_1,right_2});
 
     if(ui->Rosenbrock_rb->isChecked())
-        opt_fun = new Opt_fun2();
-    else
+        opt_fun = new Opt_fun2(); else if(ui->ln_rb->isChecked())
+        opt_fun = new Opt_fun3();   else if(ui->sincos_rb->isChecked())
+        opt_fun = new Opt_fun4();    else
         opt_fun = new Opt_fun1();
 
     emit signal(opt_fun,dom);

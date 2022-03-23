@@ -36,10 +36,10 @@ private slots:
 private:
     Ui::MainWidget *ui;
 
-    double left_1 = -10;
-    double left_2 = -10;
-    double right_1 = 10;
-    double right_2 = 10;
+    double left_1 = -2;
+    double left_2 = -2;
+    double right_1 = 2;
+    double right_2 = 2;
 
     Newton_crit *Newton_c;
     Random_crit *Random_c;

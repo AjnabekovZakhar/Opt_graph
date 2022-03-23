@@ -2,6 +2,8 @@
 #include"Expr.h"
 #include"opt_fun1_expr.h"
 #include"opt_fun2_expr.h"
+#include"opt_fun3_expr.h"
+#include"opt_fun4_expr.h"
 #include<string>
 class Opt_fun:public Expr
 {
@@ -31,3 +33,20 @@ public:
 	Opt_fun2();
 	virtual string info() override;
 };
+
+class Opt_fun3 :public Opt_fun//ln(x^2+y^4+1)
+{
+public:
+    virtual double calc(const vector<double>&) override;
+    Opt_fun3();
+    virtual string info() override;
+};
+
+class Opt_fun4 :public Opt_fun//x^2(7-3*sin(x))+(4-cos(y))*y^2
+{
+public:
+    virtual double calc(const vector<double>&) override;
+    Opt_fun4();
+    virtual string info() override;
+};
+

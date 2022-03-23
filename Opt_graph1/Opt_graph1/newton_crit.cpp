@@ -35,7 +35,8 @@ void Newton_crit::on_plot_button_clicked()
 
     if(ui->inc_rb->isChecked())
         stop_crit = new Stop_crit_Newton_dif(n, eps); else if(ui->grad_rb->isChecked())
-        stop_crit = new Stop_crit_Newton_grad(n, eps); else
+        stop_crit = new Stop_crit_Newton_grad(n, eps); else if(ui->iter_rb->isChecked())
+        stop_crit = new Stop_crit_count(n); else
         stop_crit = new Stop_crit_Newton3(n, eps);
 
     Nwtn = new Newton(dom,opt_fun,stop_crit);

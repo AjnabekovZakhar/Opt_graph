@@ -32,7 +32,7 @@
          <string>Newton's method</string>
         </property>
         <property name="checked">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -40,6 +40,9 @@
        <widget class="QRadioButton" name="RandomS_rb">
         <property name="text">
          <string>Random search</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -59,6 +62,20 @@
         </property>
         <property name="checked">
          <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="ln_rb">
+        <property name="text">
+         <string>ln(x^2+y^4+1)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="sincos_rb">
+        <property name="text">
+         <string>x^2(7-3*sin(x))+(4-cos(y))*y^2</string>
         </property>
        </widget>
       </item>
