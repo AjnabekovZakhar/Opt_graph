@@ -23,23 +23,21 @@ public:
 private:
     Ui::Newton_crit *ui;
 
-    HeatMap hm;
+    HeatMap *hm=nullptr;
 
-    Opt_fun *opt_fun;
-    Dom *dom;
+    Opt_fun *opt_fun=nullptr;
+    Dom *dom=nullptr;
 
-    Stop_crit *stop_crit;
+    Stop_crit *stop_crit=nullptr;
 
     int n = 1000;
     double eps =0.0000001;
-
-    vector<double> x_0;
 
     Newton* Nwtn;
 
 
 public slots:
-    void slot(Opt_fun*, Dom*, vector<double>);
+    void slot(Opt_fun*, Dom*);
 private slots:
     void on_plot_button_clicked();
 };

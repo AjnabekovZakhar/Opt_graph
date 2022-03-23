@@ -28,11 +28,10 @@ Random_crit::~Random_crit()
     delete ui;
 }
 
-void Random_crit::slot(Opt_fun *opt_fun_, Dom *dom_, vector<double>x_0_)
+void Random_crit::slot(Opt_fun *opt_fun_, Dom *dom_)
 {
   opt_fun=opt_fun_;
   dom=dom_;
-  x_0=x_0_;
 }
 
 void Random_crit::on_plot_button_clicked()
@@ -49,14 +48,15 @@ void Random_crit::on_plot_button_clicked()
             stop_crit = new Stop_crit_random_search_last_change(n,m);
 
     rs = new Random_search(dom, opt_fun, stop_crit,delta,p);
-    vector<vector<double>> X_n = rs->optim(x_0);
 
 
 
 
 
 
-    hm.set(dom,opt_fun,X_n);
+
+    hm=new HeatMap(dom,opt_fun,rs);
+
     }catch (const std::exception& e) {
                QMessageBox::warning(this, "Exception", e.what());
            }

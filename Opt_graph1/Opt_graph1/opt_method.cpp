@@ -19,16 +19,25 @@ void Opt_method::set_stop_crit(Stop_crit*stop_crit_)
 
 Opt_method::~Opt_method()
 {
-	if (area)
-		delete area;
-	if (opt_fun)
-		delete opt_fun;
-	if (stop_crit)
-		delete stop_crit;
+    if (area != nullptr) {
+        delete area;
+        area = nullptr;
+    }
+
+    if (stop_crit != nullptr) {
+        delete stop_crit;
+        stop_crit = nullptr;
+    }
+
+    if (opt_fun != nullptr) {
+        delete opt_fun;
+        opt_fun = nullptr;
+    }
 }
 
 vector<vector<double>> Newton::optim(vector<double> v)
 {
+    dynamic_cast<Stop_crit_count*>(stop_crit)->reset();
 	sup_stop_Newton* sup = new sup_stop_Newton(opt_fun,v);
 	vector<double> l=v, r=v, l_=v, r_=v;
 	
@@ -95,6 +104,7 @@ vector<string> Newton::info()
 
 vector<vector<double>> Random_search::optim(vector<double> v)
 {
+    dynamic_cast<Stop_crit_count*>(stop_crit)->reset();
 	sup_stop_random_search* sup = new sup_stop_random_search(opt_fun, v);
 	vector<double> y_n;
 

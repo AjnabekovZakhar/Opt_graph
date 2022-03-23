@@ -21,11 +21,10 @@ Newton_crit::~Newton_crit()
     delete ui;
 }
 
-void Newton_crit::slot(Opt_fun *opt_fun_, Dom *dom_, vector<double>x_0_)
+void Newton_crit::slot(Opt_fun *opt_fun_, Dom *dom_)
 {
   opt_fun=opt_fun_;
   dom=dom_;
-  x_0=x_0_;
 }
 
 void Newton_crit::on_plot_button_clicked()
@@ -40,14 +39,13 @@ void Newton_crit::on_plot_button_clicked()
         stop_crit = new Stop_crit_Newton3(n, eps);
 
     Nwtn = new Newton(dom,opt_fun,stop_crit);
-    vector<vector<double>> X_n = Nwtn->optim(x_0);
 
 
 
 
 
 
-    hm.set(dom,opt_fun,X_n);
+    hm = new HeatMap(dom,opt_fun, Nwtn);
 }catch (const std::exception& e) {
            QMessageBox::warning(this, "Exception", e.what());
        }

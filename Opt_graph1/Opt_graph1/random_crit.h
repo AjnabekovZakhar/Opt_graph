@@ -33,16 +33,14 @@ private:
 
     int n = 1000;
     double eps =0.0000001;
-    int m = 50;
-
-    vector<double> x_0;
+    int m = 1000;
 
     Random_search* rs;
 
-    HeatMap hm;
+    HeatMap *hm;
 
 public slots:
-    void slot(Opt_fun*, Dom*, vector<double>);
+    void slot(Opt_fun*, Dom*);
 private slots:
     void on_plot_button_clicked();
     void on_n_valueChanged(int arg1);

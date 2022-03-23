@@ -40,8 +40,6 @@ private:
     double left_2 = -10;
     double right_1 = 10;
     double right_2 = 10;
-    double x_01 = 3;
-    double x_02 = 3;
 
     Newton_crit *Newton_c;
     Random_crit *Random_c;
@@ -51,6 +49,6 @@ private:
 
 
 signals:
-    void signal(Opt_fun*, Dom*, vector<double>);
+    void signal(Opt_fun*, Dom*);
 };
 #endif // MAINWIDGET_H

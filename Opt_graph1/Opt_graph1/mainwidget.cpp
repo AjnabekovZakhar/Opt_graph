@@ -28,12 +28,6 @@ MainWidget::MainWidget(QWidget *parent)
     ui->right_2->setValue(right_2);
 
 
-    ui->x_01->setMinimum(left_1);
-    ui->x_02->setMinimum(left_2);
-    ui->x_01->setMaximum(right_1);
-    ui->x_02->setMaximum(right_2);
-    ui->x_01->setValue(x_01);
-    ui->x_02->setValue(x_02);
 
 }
 MainWidget::~MainWidget()
@@ -49,9 +43,6 @@ void MainWidget::on_crit_button_clicked()
 
     right_1=ui->right_1->value();
     right_2=ui->right_2->value();
-
-    x_01=ui->x_01->value();
-    x_02=ui->x_02->value();
 
     if(ui->Newton_rb->isChecked()){
         Newton_c = new Newton_crit;
@@ -72,7 +63,7 @@ void MainWidget::on_crit_button_clicked()
     else
         opt_fun = new Opt_fun1();
 
-    emit signal(opt_fun,dom,{x_01,x_02});
+    emit signal(opt_fun,dom);
 
     }catch (const std::exception& e) {
                QMessageBox::warning(this, "Exception", e.what());
@@ -85,7 +76,6 @@ void MainWidget::on_right_1_valueChanged(double arg1)
     ui->left_1->setMaximum(arg1);
 
 
-    ui->x_01->setMaximum(arg1);
 }
 
 
@@ -93,7 +83,6 @@ void MainWidget::on_left_1_valueChanged(double arg1)
 {
     ui->right_1->setMinimum(arg1);
 
-    ui->x_01->setMinimum(arg1);
 }
 
 
@@ -102,7 +91,6 @@ void MainWidget::on_right_2_valueChanged(double arg1)
     ui->left_2->setMaximum(arg1);
 
 
-    ui->x_02->setMaximum(arg1);
 }
 
 
@@ -110,6 +98,5 @@ void MainWidget::on_left_2_valueChanged(double arg1)
 {
     ui->right_2->setMinimum(arg1);
 
-    ui->x_02->setMinimum(arg1);
 }
 

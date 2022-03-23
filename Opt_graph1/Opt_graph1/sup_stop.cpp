@@ -75,3 +75,25 @@ void sup_stop_random_search::last_change_count_increment()
 {
 	++last_change_count;
 }
+
+sup_stop_Newton::~sup_stop_Newton()
+{
+
+    {
+        if (func != nullptr) {
+            delete func;
+            func = nullptr;
+        }
+    }
+}
+
+sup_stop_random_search::~sup_stop_random_search()
+{
+    {
+        if (func != nullptr) {
+            delete func;
+            func = nullptr;
+        }
+
+    }
+}

@@ -33,6 +33,7 @@ protected:
 public:
 	sup_stop_random_search(Opt_fun*, vector<double>);
 	virtual void set_x_n(vector<double>) override;
+    ~sup_stop_random_search();
 	double get_fun_x_n();
 	double get_fun_x_n_old();
 	const int get_last_change_count();
